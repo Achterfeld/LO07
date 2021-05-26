@@ -1,37 +1,108 @@
 <html>
     <head>
-        <title>fragmentHeader.html</title>
+        <title>Gestion des vaccins COVID-19</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="bootstrap.css" rel="stylesheet" type="text/css"/>
         <link href="style/style.css" rel="stylesheet" type="text/css"/>
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>        
     </head>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-default">
         <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand">Théo Chaffotte et Clémant Malidor</a>
-            </div>
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Théo Chaffotte et Clément Malidor</a>
+          </div>
+      
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li>
-                   <a class="nav-link" href="page_accueil.php">Gestion des vaccins</a> 
-                </li>
-                <li>
-                   <a class="nav-link" href="page_vin_liste.php">Gestion des centres</a>
-                </li>
-                <li>
-                    <a class="nav-link" href="page_vin_selection_annee_form.php">Gestion des patients</a> 
-                </li>
-                <li>
-                    <a class="nav-link" href="page_vin_ajoute_form.php">Gestion des stocks</a>
-                </li>    
-                <li>
-                    <a class="nav-link" href="page_commentaire.php">Mes innovations</a>
-                </li>
-                <li>
-                    <a class="nav-link" href="page_commentaire.php">Documention</a>
-                </li>  
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gestion des vaccins <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Liste des vaccins</a></li>
+                  <li><a href="#">Ajout d'un vaccin</a></li>
+                  <li><a href="#">Mise à jour d'un vaccin</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gestion des centres <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Ajout d'un centre</a></li>
+                  <li><a href="#">Liste des centres</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gestion des patients <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Ajout d'un patient</a></li>
+                  <li><a href="#">Liste des patients</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gestion des stocks <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Liste des centres avec le nombre de doses de chaque vaccin</a></li>
+                  <li><a href="#">Nombre global de doses des centres</a></li>
+                  <li><a href="#">Atribution de vaccins pour un centre</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gestion des rendez-vous <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Dossier de vaccination d'un patient</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Mes innovations <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Documentations innovation 1</a></li>
+                  <li><a href="#">Documentations innovation 2</a></li>
+                  <li><a href="#">Documentations innovation 3</a></li>
+                  <li><a href="#">Votre point de vue global sur ce projet</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Documentations <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Documentations innovation 1</a></li>
+                  <li><a href="#">Documentations innovation 2</a></li>
+                  <li><a href="#">Documentations innovation 3</a></li>
+                  <li><a href="#">Votre point de vue global sur ce projet</a></li>
+                </ul>
+              </li>              
             </ul>
-        </div>
-    </nav>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+
+      <div class="jumbotron" id="main-card">
+          <div id="sub-card">
+            <h1>vaccination COVID-19 2021</h1>
+            <p>Quoi qu'il en coûte ...</p>   
+          </div>
+          
+          <div class="panel panel-default" id="panel">
+            <!-- Default panel contents -->
+            <div class="panel-heading">ID</div>
+            <div class="panel-body">
+              <p>...</p>
+            </div>
+          
+            <!-- Table -->
+            <table class="table">
+              ...
+            </table>
+          </div>
+      </div>
 </html>
