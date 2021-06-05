@@ -3,7 +3,7 @@
 class ControllerVaccin {
     
     public static function liste_vaccins() {
-        $result = ModelVaccin::getAll();
+        $results = Vaccin::getAll();
 
         include 'config.php';
 

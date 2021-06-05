@@ -1,22 +1,33 @@
 <?php
 
+require('/config.php');
+
 class Model extends PDO {
-    
-    private $database;
 
-    public function __construct() {
-        $dsn = 'mysql::dbname=LO07;host=localhost;charset=utf8';
-        $username = 'root';
-        $password = '';
-        $options = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
-        try {
-            $this->database = new PDO($dsn, $username, $password, $options);
-        } catch(PDOException $e) {
-            printf("%s - %s <p>\n", $e->getCode(), $e->getMessage());
-        }
-    }
+ private static $_instance;
 
-    public static function getInstance() {
-        return $this->database;
-    }
+ // Constructeur : héritage public obligatoire par héritage de PDO
+ public function __construct() {
+ }
+
+ //Singleton
+ public static function getInstance() {
+  // les variables sont définies dans le fichier config.php
+  include_once '../controller/config.php';
+  
+  if (DEBUG) echo ("Model : getInstance : dsn = $dsn</br>");
+
+  $options = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
+
+  if (!isset(self::$_instance)) {
+   try {
+    self::$_instance = new PDO($dsn, $username, $password, $options);
+   } catch (PDOException $e) {
+    printf("%s - %s<p/>\n", $e->getCode(), $e->getMessage());
+   }
+  }
+  return self::$_instance;
+ }
+
 }
+?>
