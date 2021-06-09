@@ -1,6 +1,6 @@
 <?php
 
-require($root.'/view/fragement/header.html');
+require(__DIR__.'/../fragement/header.html');
 
 ?>
         <div class="jumbotron" id="main-card">
@@ -11,7 +11,7 @@ require($root.'/view/fragement/header.html');
             
             <div class="panel panel-default" id="panel">
               <!-- Default panel contents -->
-              <div class="panel-heading">ID</div>
+              <div class="panel-heading"></div>
               <div class="panel-body">
                 <p>Liste des vaccins</p>
               </div>
@@ -26,7 +26,7 @@ require($root.'/view/fragement/header.html');
                 <?php
                   foreach ($results as $element) {
                     printf("<tr><td>%d</td><td>%s</td><td>%d</td>", $element['id'], 
-                      $element['label'], $element['doses'];
+                      $element['label'], $element['doses']);
                   }
                 ?>
               </table>

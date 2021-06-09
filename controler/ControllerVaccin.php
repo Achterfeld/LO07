@@ -1,5 +1,7 @@
 <?php
 
+require(__DIR__.'/../model/Vaccin.php');
+
 class ControllerVaccin {
     
     public static function liste_vaccins() {
@@ -7,9 +9,7 @@ class ControllerVaccin {
 
         include 'config.php';
 
-        $vue = $root.'/view/vaccin/viewAll';
-
-        require('$vue');
+        require(__DIR__.'/../view/vaccin/viewAll.php');
     }
 }
 
