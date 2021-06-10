@@ -1,6 +1,6 @@
 <?php
 
-require(__DIR__.'/../model/Model.php');
+require('Model.php');
 
 class Vaccin {
     
