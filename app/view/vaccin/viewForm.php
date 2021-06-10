@@ -1,6 +1,7 @@
 <?php
 
-require(__DIR__.'/../fragement/header.html');
+require(__DIR__.'/../fragment/header.html');
+require(__DIR__.'/../fragment/menu.html');
 
 ?>
         <div class="jumbotron" id="main-card">
@@ -17,3 +18,9 @@ require(__DIR__.'/../fragement/header.html');
                 <button type="submit" class="btn btn-primary">Ajouter</button>
             </form>            
         </div>
+
+<?php
+
+require(__DIR__.'/../fragment/footer.html');
+
+?>
