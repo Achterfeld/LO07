@@ -1,10 +1,10 @@
 <?php
 
-require(__DIR__.'/../fragement/header.html');
+require(__DIR__.'/../fragment/header.html');
 
 ?>
         <div class="jumbotron" id="main-card">
-            <form action="routeur.php?action=ajout_vaccin" method="get">
+            <form action="routeur.php" method="get">
                 <input type="hidden" name='action' value='ajout_vaccin'>
                 <div class="form-group">
                     <label for="vaccin">Vaccin</label>

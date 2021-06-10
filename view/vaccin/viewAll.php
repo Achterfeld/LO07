@@ -1,6 +1,6 @@
 <?php
 
-require(__DIR__.'/../fragement/header.html');
+require(__DIR__.'/../fragment/header.html');
 
 ?>
         <div class="jumbotron" id="main-card">
@@ -25,7 +25,7 @@ require(__DIR__.'/../fragement/header.html');
                 </tr>
                 <?php
                   foreach ($results as $element) {
-                    printf("<tr><td>%d</td><td>%s</td><td>%d</td>", $element['id'], 
+                    printf("<tr><td>%d</td><td>%s</td><td>%d</td></tr>", $element['id'], 
                       $element['label'], $element['doses']);
                   }
                 ?>

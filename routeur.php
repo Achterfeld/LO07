@@ -22,6 +22,12 @@ switch ($action) {
     case 'ajout_vaccin':
         ControllerVaccin::$action(htmlspecialchars($_GET["label"]), htmlspecialchars($_GET["doses"]));        
         break;
+    case 'form_modif_vaccin':
+        ControllerVaccin::$action();
+        break;
+    case 'modif_vaccin':
+        ControllerVaccin::$action(htmlspecialchars($_GET["id"]), htmlspecialchars($_GET["doses"]));        
+        break;
     default:
         # code...
         break;

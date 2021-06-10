@@ -1,6 +1,6 @@
 <?php
 
-require(__DIR__.'/../fragement/header.html');
+require(__DIR__.'/../fragment/header.html');
 
 ?>
 

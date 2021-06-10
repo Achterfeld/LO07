@@ -45,5 +45,23 @@ class Vaccin {
     }
    }
   
+   public static function update($id, $doses) {
+    try {
+     $database = Model::getInstance();
+  
+     // ajout d'un nouveau tuple;
+     $query = "UPDATE vaccin SET doses = :doses WHERE id = :id";
+     $statement = $database->prepare($query);
+     $statement->execute([
+       'id' => $id,
+       'doses' => $doses
+     ]);
+     return $id;
+    } catch (PDOException $e) {
+     printf("%s - %s<p/>\n", $e->getCode(), $e->getMessage());
+     return -1;
+    }
+   }
+
 }
 ?>

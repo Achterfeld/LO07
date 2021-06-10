@@ -20,6 +20,19 @@ class ControllerVaccin {
         Vaccin::insert($label, $nbDoses);
         require(__DIR__.'/../view/vaccin/viewAjout.php');    
     }
+
+    public static function form_modif_vaccin() {
+        $results = Vaccin::getAll();
+
+        include 'config.php';
+
+        require(__DIR__.'/../view/vaccin/viewAllModif.php');
+    }
+
+    public static function modif_vaccin($id,$nbDoses) {
+        Vaccin::update($id, $nbDoses);
+        require(__DIR__.'/../view/vaccin/viewAjout.php');
+    }
 }
 
 ?>
