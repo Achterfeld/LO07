@@ -1,11 +1,7 @@
 <?php
 
 require(__DIR__.'/../fragment/header.html');
-<<<<<<< HEAD:view/vaccin/viewAll.php
-=======
 require(__DIR__.'/../fragment/menu.html');
-
->>>>>>> 18291467f0c2c3c775e09a6bbf870a54e438a906:app/view/vaccin/viewAll.php
 
 ?>
         <div class="jumbotron" id="main-card">
